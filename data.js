@@ -1,9 +1,4 @@
-var students = [
-    {name: "John", score: 10, id: "A100"}, // 0 {Object} => students[0] => students[0].score => total  
-    {name: "Larry", score: 60, id: "A101"}, // 1
-    {name: "Joseph", score: 50, id: "A102"}, // 2
-    {name: "Karla", score: 100, id: "A103"}, //3
-];
+var students = [];
 
 //document.writeln(students.length);
 
@@ -62,7 +57,7 @@ function displayAverage()
     var paragraph = document.createElement("p");
     paragraph.classList.add("badge");
     paragraph.classList.add("badge-pill");
-    paragraph.classList.add("badge-secondary");
+    paragraph.classList.add("badge-danger");
     paragraph.innerText = "Average: " + calculateAverage();
 
     resultSection.appendChild(paragraph);
@@ -110,4 +105,20 @@ function fillTable(){
             column3.classList.add("badge-danger");
         }
     });
+}
+
+
+function addStudent(){
+
+    var nameSt = document.getElementById("addName").value;
+    var scoreSt = document.getElementById("addScore").value;
+    var idSt = document.getElementById("addId").value;
+    
+    //document.write("<pre class= 'alert alert-secondary'>");
+    //document.write(JSON.stringify(students));
+    //document.write("</pre>");
+
+    students.push({name: nameSt, score: parseFloat(scoreSt), id:idSt});
+
+    console.log(students);
 }
